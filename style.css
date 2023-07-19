@@ -1,0 +1,197 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient(45deg, rgb(206, 48, 206), rgb(75, 0, 128));
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+}
+
+.main__heading {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.search__box {
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  width: 30%;
+  margin-bottom: 3rem;
+}
+
+.search__box input {
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  flex: 1;
+}
+
+.search__box-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  outline: none;
+  border: none;
+}
+
+.search__box-icon:hover {
+  background-color: rgb(255, 178, 36);
+}
+
+.search__box-icon > img {
+  width: 2.5rem;
+}
+
+.location__details {
+  color: #fff;
+  text-align: center;
+}
+
+.location__details h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.location__details p {
+  font-size: 2.3rem;
+}
+
+.climate__details {
+  margin-top: 2rem;
+}
+
+.climate__details h1 {
+  font-size: 11rem;
+  color: #e7e7e7;
+}
+
+.climate__details h1 span {
+  font-weight: 500;
+}
+
+.climate__type {
+  font-size: 4rem;
+  font-style: italic;
+  text-align: center;
+  color: #fff;
+}
+
+#climate__details-box{
+    display: none;
+}
+
+#climate__details-box.active{
+    display: block;
+}
+
+.loader {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-size: 4rem;
+}
+
+.details > h1{
+    font-size: 3rem;
+    color: #fff;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  /* font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320)); */
+}
+
+.pl {
+  display: block;
+  width: 6.25em;
+  height: 6.25em;
+}
+.pl__ring,
+.pl__ball {
+  animation: ring 2s ease-out infinite;
+}
+.pl__ball {
+  animation-name: ball;
+}
+
+/* Dark theme  */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 10%, 10%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+}
+
+/* Animation */
+@keyframes ring {
+  from {
+    stroke-dasharray: 0 257 0 0 1 0 0 258;
+  }
+  25% {
+    stroke-dasharray: 0 0 0 0 257 0 258 0;
+  }
+  50%,
+  to {
+    stroke-dasharray: 0 0 0 0 0 515 0 0;
+  }
+}
+@keyframes ball {
+  from,
+  50% {
+    animation-timing-function: ease-in;
+    stroke-dashoffset: 1;
+  }
+  64% {
+    animation-timing-function: ease-in;
+    stroke-dashoffset: -109;
+  }
+  78% {
+    animation-timing-function: ease-in;
+    stroke-dashoffset: -145;
+  }
+  92% {
+    animation-timing-function: ease-in;
+    stroke-dashoffset: -157;
+  }
+  57%,
+  71%,
+  85%,
+  99%,
+  to {
+    animation-timing-function: ease-out;
+    stroke-dashoffset: -163;
+  }
+}

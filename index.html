@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="main__heading">Weather App</h1>
+      <form class="search__box" id="search__form">
+        <input type="text" placeholder="Enter the City" name="place" required/>
+        <button type="submit" class="search__box-icon">
+          <img src="/public/images/search.png" alt="Search" />
+        </button>
+      </form>
+      <div class="details">
+        <h1 id="default__msg">Enter a Location to Start!</h1>
+        <div class="loader" id="loader">
+          <svg
+            class="pl"
+            viewBox="0 0 200 200"
+            width="200"
+            height="200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stop-color="hsl(313,90%,55%)" />
+                <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+              </linearGradient>
+              <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="hsl(313,90%,55%)" />
+                <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+              </linearGradient>
+            </defs>
+            <circle
+              class="pl__ring"
+              cx="100"
+              cy="100"
+              r="82"
+              fill="none"
+              stroke="url(#pl-grad1)"
+              stroke-width="36"
+              stroke-dasharray="0 257 1 257"
+              stroke-dashoffset="0.01"
+              stroke-linecap="round"
+              transform="rotate(-90,100,100)"
+            />
+            <line
+              class="pl__ball"
+              stroke="url(#pl-grad2)"
+              x1="100"
+              y1="18"
+              x2="100.01"
+              y2="182"
+              stroke-width="36"
+              stroke-dasharray="1 165"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div id="climate__details-box">
+          <div class="location__details">
+            <h1 id="location">Mumbai, IN</h1>
+            <p id="date">Wednesday, July 19, 2023</p>
+          </div>
+          <div class="climate__details">
+            <h1 id="deg">30<span>&deg;C</span></h1>
+          </div>
+          <h3 class="climate__type" id="ctype">Haze</h3>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="./script.js"></script>
+</html>
