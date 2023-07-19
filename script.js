@@ -28,6 +28,7 @@ form.addEventListener("submit", async (e) => {
       date.innerText = result.location.localtime.split(" ")[0];
       loader.style.display = "none";
       detailBox.style.display = "block";
+      form.reset();
     })
     .catch((err) => {
       loader.style.display = "none";
