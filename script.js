@@ -17,7 +17,7 @@ form.addEventListener("submit", async (e) => {
 
   console.log("Running...");
   fetch(
-    `http://api.weatherapi.com/v1/current.json?key=a1e1ff22a7934e169ca93651231907&q=${place}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=a1e1ff22a7934e169ca93651231907&q=${place}&aqi=no`
   )
     .then((res) => res.json())
     .then((result) => {
